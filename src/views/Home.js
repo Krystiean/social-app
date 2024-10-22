@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import react, { useEffect, useState } from 'react'
 import Post from '../components/Post'
 
 const Home = () => {
@@ -24,7 +24,11 @@ const Home = () => {
 	return (
 		<div className='postList'>
 			{posts && posts.map(post => {
-				return <Post post={post} />
+				return (
+					<div key={post.id}>
+						<Post post={post} />
+					</div>
+				)
 			})}
 		</div>
 	)
