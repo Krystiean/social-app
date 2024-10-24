@@ -5,3 +5,17 @@
 a {
   color: #000;
 }
+
+.btn {
+  background-color: #1d9bf0;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #00358a;
+  cursor: pointer;
+}
