@@ -59,7 +59,7 @@ const Home = (props) => {
 				{posts.map((post) => {
 					return (
 						<div key={post.id}>
-							<Post post={post} />
+							<Post post={post} user={props.user} setPosts={setPosts}/>
 						</div>
 					)
 				})}
