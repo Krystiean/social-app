@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Post from '../components/Post'
 import AddPost from '../components/AddPost'
+import FollowRecommendations from '../components/FollowRecommendations'
 
 const Home = (props) => {
 	const [posts, setPosts] = useState([])
@@ -55,11 +56,12 @@ const Home = (props) => {
 	return (
 		<div className="home">
 			{props.user && <AddPost getPrevPosts={getPrevPosts}/>}
+			{props.user && <FollowRecommendations user={props.user} getLatestPosts={getLatestPosts} posts={posts}/>}
 			<div className='postList'>
 				{posts.map((post) => {
 					return (
 						<div key={post.id}>
-							<Post post={post} user={props.user} setPosts={setPosts}/>
+							<Post post={post} user={props.user} setPosts={setPosts} getLatestPosts={getLatestPosts}/>
 						</div>
 					)
 				})}
